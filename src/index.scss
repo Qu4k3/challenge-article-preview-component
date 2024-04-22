@@ -1,0 +1,25 @@
+@use 'styles/variables' as v;
+
+:root {
+  font-family: v.$ff;
+  line-height: 1.5;
+  font-weight: v.$fw-default;
+  font-size: v.$fs;
+
+  color-scheme: light dark;
+  color: v.$color-very-dark-grayish-blue;
+  background-color: v.$color-light-grayish-blue;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

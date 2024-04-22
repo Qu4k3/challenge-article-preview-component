@@ -1,0 +1,104 @@
+@use 'styles/variables' as v;
+
+#root {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  border-radius: 15px;
+  background-color: #fff;
+}
+
+.picture {
+  background-image: url("../src/assets/drawers.jpg");
+  width: 300px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-size: cover;
+}
+
+.card {
+  flex: 1;
+  padding: 40px;
+  text-align: left;
+
+  h1 {
+    margin-top: 0;
+  }
+
+  & > p {
+    color: v.$color-desaturated-dark-blue;
+  }
+
+  .card__bottom-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+
+    .bottom-card__user {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        height: 48px;
+        width: 48px;
+        border-radius: 100%;
+      }
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+          margin: 0;
+          font-weight: v.$fw-bold;
+        }
+
+        time {
+          color: v.$color-grayish-blue;
+        }
+      }
+    }
+
+    .bottom-card__share {
+      .share {
+        width: 32px;
+        height: 32px;
+        background-color: v.$color-light-grayish-blue;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          padding-bottom: 2px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: v.$mobile) {
+  section {
+    max-width: 525px;
+    flex-direction: column;
+  }
+
+  .picture {
+    height: 250px;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+  }
+
+  .card {
+    padding: 40px 30px 30px;
+  }
+}
