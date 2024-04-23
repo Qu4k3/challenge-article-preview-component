@@ -33,13 +33,13 @@ function App() {
             <div className={`share__social${isShareActive ? ' social--active' : ''}`}>
               <span>SHARE</span>
               <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fchallenge-article-preview-component.netlify.app">
-                <SiFacebook title='My title' size={20} />
+                <SiFacebook title='Facebook' size={20} />
               </a>
               <a target="_blank" href="https://twitter.com/share?text=Frontend%20Mentor%20%7C%20Article%20preview%20component">
-                <SiTwitter title='My title' size={20} />
+                <SiTwitter title='Twitter' size={20} />
               </a>
               <a target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://challenge-article-preview-component.netlify.app&media=https://raw.githubusercontent.com/Qu4k3/challenge-article-preview-component/main/starter_files/design/desktop-preview.jpg&description=Frontend%20Mentor%20%7C%20Article%20preview%20component">
-                <SiPinterest title='My title' size={20} />
+                <SiPinterest title='Pinterest' size={20} />
               </a>
             </div>
           </div>
