@@ -25,6 +25,7 @@ section {
   flex: 1;
   padding: 40px;
   text-align: left;
+  position: relative;
 
   h1 {
     margin-top: 0;
@@ -32,6 +33,7 @@ section {
 
   & > p {
     color: v.$color-desaturated-dark-blue;
+    margin-bottom: 40px;
   }
 
   .card__bottom-card {
@@ -68,7 +70,44 @@ section {
     }
 
     .bottom-card__share {
-      .share {
+      position: relative;
+
+      .share__social {
+        background-color: v.$color-very-dark-grayish-blue;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        padding: 20px 40px;
+        position: absolute;
+        left: 0;
+        transform: translateX(calc(-50% + 16px));
+        top: -85px;
+        gap: 15px;
+        border-radius: 10px;
+        display: none;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-left: 12px solid transparent;
+          border-right: 12px solid transparent;
+          border-top: 12px solid hsl(217, 19%, 35%);
+          top: 100%;
+          left: calc(50% - 12px);
+        }
+
+        &.social--active {
+          display: flex;
+        }
+
+        span {
+          color: v.$color-grayish-blue;
+          letter-spacing: 5px;
+        }
+      }
+      .share__btn {
         width: 32px;
         height: 32px;
         background-color: v.$color-light-grayish-blue;
@@ -76,9 +115,21 @@ section {
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+
+        &.btn--active {
+          background-color: v.$color-desaturated-dark-blue;
+
+          svg {
+            fill: #fff;
+          }
+        }
 
         svg {
           padding-bottom: 2px;
+          fill: v.$color-very-dark-grayish-blue;
         }
       }
     }
@@ -99,6 +150,43 @@ section {
   }
 
   .card {
-    padding: 40px 30px 30px;
-  }
+    padding: 40px 30px 20px;
+
+    .card__bottom-card {
+      .bottom-card__share {
+        position: initial !important;
+  
+        .share__social {
+          background-color: v.$color-very-dark-grayish-blue;
+          color: #fff;
+          display: flex;
+          align-items: center;
+          padding: 32px 30px;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          gap: 15px;
+          top: auto;
+          border-radius: 15px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          transform: none;
+          display: none;
+    
+          &::after {
+            display: none;
+          }
+    
+          &.social--active {
+            display: flex;
+          }
+    
+          span {
+            color: v.$color-grayish-blue;
+            letter-spacing: 5px;
+          }
+        }
+      }
+    }
+  }  
 }
