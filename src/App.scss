@@ -106,6 +106,14 @@ section {
           color: v.$color-grayish-blue;
           letter-spacing: 5px;
         }
+
+        a {
+          transition: .3s;
+
+          &:hover {
+            transform: translateY(-4px);
+          }
+        }
       }
       .share__btn {
         width: 32px;
